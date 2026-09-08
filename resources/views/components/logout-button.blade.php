@@ -1,4 +1,4 @@
 <form method="POST" action="{{ route('logout') }}" class="inline">
     @csrf
-    <button type="submit" class="btn btn-danger">Logout
+    <button type="submit" {{ $attributes->merge(['class' => 'btn btn-danger']) }}>Logout
 </form>
