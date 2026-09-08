@@ -12,8 +12,8 @@ Route::get('/Miniapp', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('index');
-});
+    return view('dashboard.index');
+})->name('dashboard');
 
 // برای کاربر لاگین نشده یا مهمان
 Route::middleware('guest')->group(function () {
