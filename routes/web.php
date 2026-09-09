@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SignupController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,11 +13,15 @@ Route::get('/Miniapp', function () {
     return view('Miniapp');
 });
 
+Route::middleware('guest',)->group(function () {
+    Route::get('/sign_up', [SignupController::class, 'index'])->name('signup');
+    Route::post('/sign_up', [SignupController::class, 'store'])->name('signup_store');
+});
+
 Route::get('/dashboard', DashboardController::class)
     ->middleware('auth')
     ->name('dashboard');
 
-// برای کاربر لاگین نشده یا مهمان
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'create'])->name('login');
     Route::post('/login', [LoginController::class, 'store']);
