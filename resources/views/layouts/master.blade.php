@@ -9,7 +9,7 @@
 
 <body>
     @yield('content')
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/dashboard/index.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </body>
 
 </html>

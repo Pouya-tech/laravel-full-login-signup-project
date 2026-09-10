@@ -9,6 +9,8 @@ export default defineConfig({
             input: [
                 "resources/css/app.css",
                 "resources/css/dashboard/index.css",
+                "resources/css/auth/signup.css",
+                'resources/css/auth/login.css',
                 "resources/js/app.js",
                 "resources/scss/app.scss",
             ],

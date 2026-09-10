@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\SignupController;
+use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +15,7 @@ Route::get('/Miniapp', function () {
 
 Route::middleware('guest',)->group(function () {
     Route::get('/sign_up', [SignupController::class, 'index'])->name('signup');
-    Route::post('/sign_up', [SignupController::class, 'store'])->name('signup_store');
+    Route::post('/sign_up', [SignupController::class, 'create'])->name('signup.store');
 });
 
 Route::get('/dashboard', DashboardController::class)
@@ -23,7 +23,7 @@ Route::get('/dashboard', DashboardController::class)
     ->name('dashboard');
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [LoginController::class, 'create'])->name('login');
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'store']);
 });
 
