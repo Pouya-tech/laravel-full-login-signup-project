@@ -15,7 +15,7 @@ Route::get('/Miniapp', function () {
 
 Route::middleware('guest',)->group(function () {
     Route::get('/sign_up', [SignupController::class, 'index'])->name('signup');
-    Route::post('/sign_up', [SignupController::class, 'create'])->name('signup.store');
+    Route::post('/sign_up', [SignupController::class, 'store'])->name('signup.store');
 });
 
 Route::get('/dashboard', DashboardController::class)

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['username', 'email', 'password'])]
+#[Fillable(['username', 'email', 'password', 'first_name', 'last_name', 'phone_number'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -32,6 +32,6 @@ class User extends Authenticatable
     }
     public static function attemptLogin(array $credentials, bool $remember = false): bool
     {
-        return Auth::attempt($credentials,$remember);
+        return Auth::attempt($credentials, $remember);
     }
 }
