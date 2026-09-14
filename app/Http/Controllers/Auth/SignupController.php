@@ -18,14 +18,9 @@ class SignupController extends Controller
     public function store(SignupRequest $request)
     {
         // dd($request->all());
+        User::create($request->validated());
 
-        $validatedData = $request->validated();
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
-
-        User::create($validatedData);
-
-        // dd($validatedData);
 
         // Enter Login page after signing in
         return redirect()->route('login')->with('success', 'You Have Been Signed Up successfully');
