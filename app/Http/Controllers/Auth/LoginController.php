@@ -15,17 +15,8 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
         return view('auth.login');
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -37,31 +28,6 @@ class LoginController extends Controller
 
         return redirect()->intended(route('dashboard'));
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      */
